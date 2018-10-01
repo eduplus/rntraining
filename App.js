@@ -3,6 +3,7 @@
 import React from 'react';
 import { Button, TextInput, View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import DeviceInfo from 'react-native-device-info';
 
 class HomeScreen extends React.Component {
 
@@ -18,6 +19,7 @@ class HomeScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Home Screen</Text>
+        <Text>Device Model: {DeviceInfo.getModel()}</Text>
         <TextInput
           style={{height: 40, width: 200, borderColor: 'gray', borderWidth: 1}}
           onChangeText={(text) => this.setState({text})}
